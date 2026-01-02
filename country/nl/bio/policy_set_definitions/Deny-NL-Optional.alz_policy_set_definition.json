@@ -87,46 +87,10 @@
           "Standard_EC96ias_v5"
         ]
       },
-      "allowedKeyVaultSKUs": {
-        "type": "Array",
-        "metadata": {
-          "displayName": "Allowed Key Vault SKUs",
-          "description": "The list of Key Vault SKUs that can be deployed"
-        },
-        "defaultValue": [
-          "Premium"
-        ]
-      },
-      "effectForLocations": {
+      "effectForKeyVaultPremiumSKU": {
         "type": "String",
         "metadata": {
-          "displayName": "Effect for location policy",
-          "description": "The effect determines what happens when the policy rule is evaluated to match"
-        },
-        "allowedValues": [
-          "Audit",
-          "Deny",
-          "Disabled"
-        ],
-        "defaultValue": "Deny"
-      },
-      "effectForVMSKUs": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Effect for VM SKU policy",
-          "description": "The effect determines what happens when the policy rule is evaluated to match"
-        },
-        "allowedValues": [
-          "Audit",
-          "Deny",
-          "Disabled"
-        ],
-        "defaultValue": "Deny"
-      },
-      "effectForKeyVaultSKUs": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Effect for Key Vault SKU policy",
+          "displayName": "Effect for Key Vault Premium SKU policy",
           "description": "The effect determines what happens when the policy rule is evaluated to match"
         },
         "allowedValues": [
@@ -157,11 +121,11 @@
         }
       },
       {
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/placeholder/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
         "policyDefinitionReferenceId": "KeyVaultShouldUsePremiumSKU",
         "parameters": {
           "effect": {
-            "value": "[parameters('effectForKeyVaultSKUs')]"
+            "value": "[parameters('effectForKeyVaultPremiumSKU')]"
           }
         }
       }

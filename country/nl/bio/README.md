@@ -42,6 +42,7 @@ This repository implements BIO2 compliance using the [Azure Landing Zones Librar
   - Geographic restrictions (defaults to West Europe and Noth Europe regions)
   - Confidential computing VM SKU requirements (DCv3/DCv5 series)
   - Premium Key Vault requirements for enhanced security
+- **Enforce-KV-Premium**: Pulled from <https://github.com/Azure/Community-Policy/tree/main/policyDefinitions/Key%20Vault/enforce-key-vault-premium-sku>
 - **alz_policy_default_values**: The file from SLZ is expanded so that `allowed_locations` also applies to the Deny-NL-Optional group.
 
 Some of these can also be accomplished with Sovereign Landing Zones.

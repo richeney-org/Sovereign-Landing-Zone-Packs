@@ -3,7 +3,9 @@
   "policy_assignments": [
     "Audit-NL-BIO"
   ],
-  "policy_definitions": [],
+  "policy_definitions": [
+    "Enforce-KV-Premium"
+  ],
   "policy_set_definitions": [
     "Deny-NL-Optional"
   ],
