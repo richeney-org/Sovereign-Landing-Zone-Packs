@@ -1,9 +1,9 @@
 {
-  "name": "80cb9e61-f5f8-4ee4-ab86-132a5747bc18",
+  "name": "Enforce-KV-Premium",
   "type": "Microsoft.Authorization/policyDefinitions",
   "properties": {
-    "displayName": "Enforce key vault premium SKU",
-    "description": "This policy enforces premium sku for key vaults.",
+    "displayName": "Enforce Azure Key Vault Premium SKU",
+    "description": "This policy enforces Premium sku for Azure Key Vaults.",
     "metadata": {
       "category": "Key Vault",
       "createdBy": "",
