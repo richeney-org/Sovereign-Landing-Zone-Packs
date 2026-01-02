@@ -1,0 +1,9 @@
+{
+  "name": "nl_confidential_corp",
+  "policy_assignments": [
+    "Deny-NL-Optional"
+  ],
+  "policy_definitions": [],
+  "policy_set_definitions": [],
+  "role_definitions": []
+}

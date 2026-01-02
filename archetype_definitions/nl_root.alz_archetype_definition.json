@@ -1,0 +1,11 @@
+{
+  "name": "nl_root",
+  "policy_assignments": [
+    "Audit-NL-BIO"
+  ],
+  "policy_definitions": [],
+  "policy_set_definitions": [
+    "Deny-NL-Optional"
+  ],
+  "role_definitions": []
+}

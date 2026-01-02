@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/Azure-Landing-Zones-Library/main/schemas/library_metadata.json",
+  "name": "NL_SLZ",
+  "display_name": "NL Sovereign Landing Zone",
+  "description": "Additional sovereignty policies for the Netherlands including BIO compliance.",
+  "path": "countrys/nl/slz",
+  "dependencies": [
+    {
+      "path": "platform/slz",
+      "ref": "2025.10.1"
+    }
+  ]
+}

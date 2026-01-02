@@ -1,0 +1,170 @@
+{
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "apiVersion": "2021-06-01",
+  "name": "Deny-NL-Optional",
+  "properties": {
+    "displayName": "Deny - Dutch Optional Security Controls",
+    "description": "This policy set enforces optional security controls for Dutch organizations including geographic restrictions to EU regions, approved VM SKUs for secure workloads, and premium Key Vault tiers for enhanced security.",
+    "metadata": {
+      "category": "Regulatory Compliance",
+      "version": "1.0.0"
+    },
+    "parameters": {
+      "allowedLocations": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed locations",
+          "description": "The list of locations that can be specified when deploying resources",
+          "strongType": "location"
+        },
+        "defaultValue": [
+          "West Europe",
+          "North Europe"
+        ]
+      },
+      "allowedVMSKUs": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed virtual machine SKUs",
+          "description": "The list of virtual machine SKUs that can be deployed"
+        },
+        "defaultValue": [
+          "Standard_DC1s_v2",
+          "Standard_DC2s_v2",
+          "Standard_DC4s_v2",
+          "Standard_DC8_v2",
+          "Standard_DC1s_v3",
+          "Standard_DC2s_v3",
+          "Standard_DC4s_v3",
+          "Standard_DC8s_v3",
+          "Standard_DC16s_v3",
+          "Standard_DC24s_v3",
+          "Standard_DC32s_v3",
+          "Standard_DC48s_v3",
+          "Standard_DC1ds_v3",
+          "Standard_DC2ds_v3",
+          "Standard_DC4ds_v3",
+          "Standard_DC8ds_v3",
+          "Standard_DC16ds_v3",
+          "Standard_DC24ds_v3",
+          "Standard_DC32ds_v3",
+          "Standard_DC48ds_v3",
+          "Standard_DC2ads_v5",
+          "Standard_DC2as_v5",
+          "Standard_DC4ads_v5",
+          "Standard_DC4as_v5",
+          "Standard_DC8ads_v5",
+          "Standard_DC8as_v5",
+          "Standard_DC16ads_v5",
+          "Standard_DC16as_v5",
+          "Standard_DC32ads_v5",
+          "Standard_DC32as_v5",
+          "Standard_DC48ads_v5",
+          "Standard_DC48as_v5",
+          "Standard_DC64ads_v5",
+          "Standard_DC64as_v5",
+          "Standard_DC96ads_v5",
+          "Standard_DC96as_v5",
+          "Standard_EC2ads_v5",
+          "Standard_EC2as_v5",
+          "Standard_EC4ads_v5",
+          "Standard_EC4as_v5",
+          "Standard_EC8ads_v5",
+          "Standard_EC8as_v5",
+          "Standard_EC16ads_v5",
+          "Standard_EC16as_v5",
+          "Standard_EC20ads_v5",
+          "Standard_EC20as_v5",
+          "Standard_EC32ads_v5",
+          "Standard_EC32as_v5",
+          "Standard_EC48ads_v5",
+          "Standard_EC48as_v5",
+          "Standard_EC64ads_v5",
+          "Standard_EC64as_v5",
+          "Standard_EC96ads_v5",
+          "Standard_EC96as_v5",
+          "Standard_EC96iads_v5",
+          "Standard_EC96ias_v5"
+        ]
+      },
+      "allowedKeyVaultSKUs": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Key Vault SKUs",
+          "description": "The list of Key Vault SKUs that can be deployed"
+        },
+        "defaultValue": [
+          "Premium"
+        ]
+      },
+      "effectForLocations": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect for location policy",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "effectForVMSKUs": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect for VM SKU policy",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "effectForKeyVaultSKUs": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect for Key Vault SKU policy",
+          "description": "The effect determines what happens when the policy rule is evaluated to match"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyDefinitions": [
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "policyDefinitionReferenceId": "AllowedLocations",
+        "parameters": {
+          "listOfAllowedLocations": {
+            "value": "[parameters('allowedLocations')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cccc23c7-8427-4f53-ad12-b6a63eb452b3",
+        "policyDefinitionReferenceId": "AllowedVirtualMachineSKUs",
+        "parameters": {
+          "listOfAllowedSKUs": {
+            "value": "[parameters('allowedVMSKUs')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+        "policyDefinitionReferenceId": "KeyVaultShouldUsePremiumSKU",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('effectForKeyVaultSKUs')]"
+          }
+        }
+      }
+    ]
+  }
+}
