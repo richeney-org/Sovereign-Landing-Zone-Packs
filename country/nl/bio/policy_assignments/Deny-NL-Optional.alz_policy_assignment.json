@@ -10,7 +10,7 @@
   "properties": {
     "description": "This policy assignment enforces optional security controls for Dutch organizations including geographic restrictions to EU regions, approved VM SKUs for secure confidential computing workloads, and premium Key Vault tiers for enhanced security and compliance.",
     "displayName": "Deny - Dutch Optional Security Controls",
-    "policyDefinitionId": "${root_scope_resource_id}/providers/Microsoft.Authorization/policySetDefinitions/Deny-NL-Optional",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/placeholder/providers/Microsoft.Authorization/policySetDefinitions/Deny-NL-Optional",
     "definitionVersion": "1.*.*",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
