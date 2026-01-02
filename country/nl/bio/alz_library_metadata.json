@@ -3,7 +3,7 @@
   "name": "NL_SLZ",
   "display_name": "NL Sovereign Landing Zone",
   "description": "Additional sovereignty policies for the Netherlands including BIO compliance.",
-  "path": "countrys/nl/slz",
+  "path": "country/nl/slz",
   "dependencies": [
     {
       "path": "platform/slz",

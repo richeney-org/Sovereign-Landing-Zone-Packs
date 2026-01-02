@@ -1,71 +1,68 @@
-# Azure Landing Zones Library - Dutch BIO Compliance
+# Azure Landing Zones Library - Country & Industry Packs
 
-This repository contains Azure Landing Zone configurations implementing the Dutch Government Information Security Baseline (BIO) compliance framework.
+This repository provides a centralized collection of example country-specific and industry-specific compliance packs for the [Azure Landing Zones Library](https://aka.ms/alz/library) format. These packs extend the standard platform libraries with additional sovereignty and compliance requirements.
 
-## About BIO
+## Purpose
 
-The **Government Information Security Baseline (BIO)** is the basic framework of standards for information security within all levels of Dutch government, including central government, municipalities, provinces, and water boards.
+While the [Azure Landing Zones Library](https://aka.ms/alz/library) provides foundational platform configurations, organizations often need additional policies and controls to meet:
 
-**BIO2** (Baseline Informatiebeveiliging Overheid 2) is the successor to BIO 1.04zv and represents the current standard for government information security in the Netherlands. This is not yet formalised at the time of writing, but it is suggested that future versions of this example could include some of the additional policies and standards. This could be accomplished by referencing an updated inbuilt policy initiative or by adding additional assets into this library.
+- **Country-specific regulations** (data residency, sovereignty requirements)
+- **Industry compliance standards** (financial services, healthcare, government)
 
-### Key Resources
-
-- **Official BIO Portal**: [bio-overheid.nl](https://www.bio-overheid.nl/category/producten/bio)
-- **Digital Government Overview**: [digitaleoverheid.nl - BIO](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/cybersecurity/kaders-voor-cybersecurity/baseline-informatiebeveiliging-overheid/)
-- **Azure Policy Samples**: [Microsoft Learn - NL BIO Cloud Theme](https://learn.microsoft.com/en-us/azure/governance/policy/samples/nl-bio-cloud-theme)
-
-## Azure Implementation
-
-Microsoft Azure provides built-in compliance support for BIO2 through the **NL BIO Cloud Theme V2** policy initiative:
-
-- **Initiative ID**: `d8b2ffbe-c6a8-4622-965d-4ade11d1d2ee`
-- **Policy Count**: 283 policies
-- **Category**: Regulatory Compliance
-- **Ownership**: Customer
-
-### Azure Policy Resources
-
-- **Azure Advertizer**: [aka.ms/azadvertizer](https://aka.ms/azadvertizer) - Search for "NL BIO" or "BIO"
-- **Azure Policy Repository**: [github.com/Azure/azure-policy](https://github.com/Azure/azure-policy)
-- **BIO Policy Definition**: [NL_BIO_Cloud_Theme_V2.json](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/NL_BIO_Cloud_Theme_V2.json)
+This repository bridges that gap by providing pre-built, reusable compliance packs that stack on top of standard landing zones.
 
 ## Repository Structure
 
-This repository implements BIO2 compliance using the [Azure Landing Zones Library](https://azure.github.io/Azure-Landing-Zones-Library/) framework.
+```text
+/country/<country_code>/<framework>/
+/industry/<sector>/<standard>/
+```
 
-### Key Components
+Each pack contains standard Azure Landing Zone library assets such as:
 
-- **alz_library_metadata**: This library is stacked on top of the Sovereign Landing Zone
-- **nl_slz**: Architecture definition extending the Standard Landing Zone (SLZ) with Dutch compliance archetypes
-- **Audit-NL-BIO**: Policy assignment implementing the full NL BIO Cloud Theme V2 initiative for audit compliance
-- **Deny-NL-Optional**: Custom policy set enforcing additional requirements as an example of adding assets:
-  - Geographic restrictions (defaults to West Europe and Noth Europe regions)
-  - Confidential computing VM SKU requirements (DCv3/DCv5 series)
-  - Premium Key Vault requirements for enhanced security
-- **alz_policy_default_values**: The file from SLZ is expanded so that `allowed_locations` also applies to the Deny-NL-Optional group.
+- `alz_library_metadata.json` - Library definition and dependencies
+- `archetype_*.json` - Management group archetype configurations
+- `policy_*.json` - Custom policy definitions and assignments
+- `alz_policy_default_values.json` - Policy parameter defaults (optional)
+- `README.md` - Pack-specific documentation
 
-Some of these can also be accomplished with Sovereign Landing Zones.
+See the <https://aka.ms/alz/library/site> for more detail.
 
-### Archetype Definitions
+## Available Packs
 
-- **nl_root**: Root management group policies including BIO audit requirements
-- **nl_confidential_corp**: Corporate confidential workload policies
-- **nl_confidential_online**: Online service confidential workload policies
+### Country Packs
 
-## Deployment
+- **Netherlands (NL)**
+  - `country/nl/bio/` - Dutch Government Information Security Baseline (BIO) compliance
 
-This library is compatible with Azure Landing Zone deployment tools that support the ALZ Library format, including:
+### Industry Packs
+
+*Coming soon*
+
+## Usage
+
+These packs are designed for use with Azure Landing Zone deployment tools that support the ALZ Library format:
 
 - **Terraform**: [Azure/terraform-azurerm-avm-ptn-alz](https://github.com/Azure/terraform-azurerm-avm-ptn-alz)
 - **Bicep**: [Azure/ALZ-Bicep](https://github.com/Azure/ALZ-Bicep)
 
-## Compliance Notes
+Reference packs by their library metadata path and version when configuring your landing zone deployment.
 
-- All policies follow the official Azure BIO2 implementation (B.01.3)
-- Geographic restrictions ensure data residency compliance within the EU
-- Confidential computing requirements align with Dutch government security standards
-- Policy assignments use system-assigned managed identities for secure execution
+## Contributing
 
-## Documentation
+Contributions of new country and industry packs are welcome. Please ensure:
 
-For detailed Azure Landing Zone documentation, see: [Azure Landing Zones Library](https://azure.github.io/Azure-Landing-Zones-Library/)
+- Compliance with the [ALZ Library schema](https://azure.github.io/Azure-Landing-Zones-Library/)
+- Clear documentation of regulatory requirements
+- Use of official Azure Policy initiatives where available
+- Proper versioning and dependency management
+
+## Resources
+
+- **Azure Landing Zones Library**: [aka.ms/alz/library](https://aka.ms/alz/library)
+- **Azure Policy Documentation**: [learn.microsoft.com/azure/governance/policy](https://learn.microsoft.com/azure/governance/policy)
+- **Sovereign Landing Zones**: [aka.ms/alz/slz](https://aka.ms/sovereign/slz)
+
+## License
+
+This project follows the same licensing as the Azure Landing Zones Library.
