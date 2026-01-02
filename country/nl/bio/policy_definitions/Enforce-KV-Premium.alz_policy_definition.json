@@ -4,11 +4,13 @@
   "properties": {
     "displayName": "Enforce Azure Key Vault Premium SKU",
     "description": "This policy enforces Premium sku for Azure Key Vaults.",
+    "policyType": "Custom",
     "metadata": {
       "category": "Key Vault",
-      "createdBy": "",
-      "updatedBy": null,
-      "updatedOn": null,
+      "alzCloudEnvironments": [
+        "AzureCloud"
+      ],
+      "source": "https://github.com/richeney-org/Sovereign-Landing-Zone-Packs/",
       "version": "1.0.0"
     },
     "mode": "Indexed",
