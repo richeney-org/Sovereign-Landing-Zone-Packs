@@ -3,7 +3,7 @@
   "type": "Microsoft.Authorization/policySetDefinitions",
   "apiVersion": "2021-06-01",
   "properties": {
-    "displayName": "Deny - Additional Non-BIO Sovereignty Controls for Netherlands - Global",
+    "displayName": "Deny - Additional Non-BIO Sovereignty Controls for the Netherlands - Global",
     "description": "This policy set enforces optional global security controls for Dutch organizations including geographic restrictions to EU regions.",
     "policyType": "Custom",
     "metadata": {
