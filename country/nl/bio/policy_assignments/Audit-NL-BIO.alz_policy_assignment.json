@@ -9,7 +9,7 @@
   },
   "properties": {
     "description": "This policy assignment audits compliance with the Dutch Baseline Informatiebeveiliging (BIO) controls specifically for the 'thema-uitwerking Clouddiensten' theme. It includes policies covered under SOC2 and ISO 27001:2013 controls to ensure compliance with Dutch cybersecurity standards.",
-    "displayName": "Audit - Dutch BIO Cloud Theme V2 Compliance",
+    "displayName": "Audit - Dutch BIO Cloud Theme V2 Compliance (Global)",
     "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/d8b2ffbe-c6a8-4622-965d-4ade11d1d2ee",
     "definitionVersion": "2.*.*",
     "enforcementMode": "Default",

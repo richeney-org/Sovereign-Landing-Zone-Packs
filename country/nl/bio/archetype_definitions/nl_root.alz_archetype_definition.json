@@ -1,13 +1,15 @@
 {
   "name": "nl_root",
   "policy_assignments": [
-    "Audit-NL-BIO"
+    "Audit-NL-BIO",
+    "Deny-NL-Global"
   ],
   "policy_definitions": [
     "Enforce-KV-Premium"
   ],
   "policy_set_definitions": [
-    "Deny-NL-Optional"
+    "Deny-NL-Global",
+    "Deny-NL-Confidential"
   ],
   "role_definitions": []
 }
