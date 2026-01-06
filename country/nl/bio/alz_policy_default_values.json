@@ -21,7 +21,7 @@
           "parameter_names": [
             "allowedLocations"
           ],
-          "policy_assignment_name": "Deny-NL-Optional"
+          "policy_assignment_name": "Deny-NL-Global"
         }
       ]
     }
